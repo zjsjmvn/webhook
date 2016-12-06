@@ -27,7 +27,7 @@ type Config struct {
 // --------------------------------------------------------------------------------
 
 type Repository struct {
-	Url         string `json:"url"` // "https://github.com/qiniu/api"
+	Url         string `json:"html_url"`
 	AbsoluteUrl string `json:"absolute_url"`
 }
 
@@ -58,7 +58,7 @@ func runScript(item *WatchItem) (err error) {
 	return
 }
 
-func handleGithub(event Payload, cfg *Config) (err error) {
+func handleGithubOrGogs(event Payload, cfg *Config) (err error) {
 	for _, item := range cfg.Items {
 		if event.Repo.Url == item.Repo && strings.Contains(event.Ref, item.Branch) {
 			err = runScript(&item)
@@ -87,7 +87,6 @@ func handleBitbucket(event Payload, cfg *Config) {
 	}
 	return
 }
-
 func handle(w http.ResponseWriter, req *http.Request) {
 	defer req.Body.Close()
 	decoder := json.NewDecoder(req.Body)
