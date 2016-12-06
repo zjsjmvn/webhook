@@ -111,12 +111,11 @@ func handle(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
+	fmt.Println("webhook is running")
 	if len(os.Args) < 2 {
 		println("Usage: webhook <ConfigFile>\n")
 		return
 	}
-
-	fmt.Println("webhook is running")
 	cfgbuf, err := ioutil.ReadFile(os.Args[1])
 	if err != nil {
 		log.Println("Read config file failed:", err)
