@@ -53,7 +53,6 @@ func runScript(item *WatchItem) (err error) {
 	if err != nil {
 		log.Printf("Exec command failed: %s\n", err)
 	}
-
 	log.Printf("Run %s output: %s\n", script, string(out))
 	return
 }
