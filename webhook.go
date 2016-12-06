@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -115,6 +116,7 @@ func main() {
 		return
 	}
 
+	fmt.Println("webhook is running")
 	cfgbuf, err := ioutil.ReadFile(os.Args[1])
 	if err != nil {
 		log.Println("Read config file failed:", err)
