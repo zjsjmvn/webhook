@@ -58,6 +58,7 @@ func runScript(item *WatchItem) (err error) {
 	return
 }
 
+//this can match github and gogs
 func handleGithubOrGogs(event Payload, cfg *Config) (err error) {
 	for _, item := range cfg.Items {
 		if event.Repo.Url == item.Repo && strings.Contains(event.Ref, item.Branch) {
@@ -109,8 +110,8 @@ func handle(w http.ResponseWriter, req *http.Request) {
 // --------------------------------------------------------------------------------
 
 func main() {
-
 	fmt.Println("webhook is running")
+
 	if len(os.Args) < 2 {
 		println("Usage: webhook <ConfigFile>\n")
 		return

@@ -1,9 +1,10 @@
-Github/Bitbucket webhook tools
+Gogs/Github/Bitbucket webhook tools
+this is very easy to use
 ==
 
 [![Qiniu Logo](http://qiniutek.com/images/logo-2.png)](http://qiniu.com/)
 
-基于 Github/Bitbucket webhook 做了个小工具。
+基于 Gogs/Github/Bitbucket webhook 做了个小工具。
 
 它能够做什么？简单来说，它就是一个让 Github/Bitbucket repo 在某个分支发生 push 行为的时候，自动触发一段脚本。
 
