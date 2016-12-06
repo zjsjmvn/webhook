@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "woqidongla"
-echo "yes"
+cd /go
+ls -l
